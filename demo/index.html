@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Copilot Widget — Dev Harness</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #f2f2f7;
+        color: #1c1c1e;
+      }
+      .fake-page {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 48px 24px;
+      }
+      .fake-card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+      }
+      .fake-img {
+        width: 100%;
+        height: 280px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #e5e5ea, #d1d1d6);
+      }
+      h1 {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fake-page">
+      <div class="fake-card">
+        <div class="fake-img"></div>
+        <h1>Demo marketplace product page</h1>
+        <p>
+          This is a local harness rendering the real Copilot widget inside a
+          Shadow DOM — same components and hooks used by the content script.
+        </p>
+      </div>
+    </div>
+    <script type="module" src="./main.tsx"></script>
+  </body>
+</html>

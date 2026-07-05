@@ -68,6 +68,10 @@ npm install
 npm run dev        # Vite dev server with HMR (writes dist/ for loading unpacked)
 ```
 
+You can also preview the widget in isolation (no extension install needed) via
+the dev harness at `http://localhost:5173/demo/index.html`, which mounts the
+real widget inside a Shadow DOM on a mock product page.
+
 Then load the extension in Chrome:
 
 1. Open `chrome://extensions`
