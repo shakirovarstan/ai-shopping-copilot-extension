@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Styles below are compiled by Tailwind/PostCSS and imported as an inline
+ * string into the content script, then injected into the widget's Shadow DOM
+ * root. Nothing here leaks to the host marketplace page.
+ */
+
+@layer base {
+  :host {
+    all: initial;
+  }
+
+  .acp-root {
+    font-family: theme("fontFamily.sans");
+    font-size: 14px;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    color-scheme: light dark;
+  }
+
+  /* Respect the user's reduced-motion preference. */
+  @media (prefers-reduced-motion: reduce) {
+    .acp-root *,
+    .acp-root *::before,
+    .acp-root *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  .acp-glass {
+    background-color: rgba(255, 255, 255, 0.72);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+  }
+
+  .dark .acp-glass {
+    background-color: rgba(28, 28, 30, 0.72);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+  }
+
+  .acp-shimmer {
+    background-image: linear-gradient(
+      100deg,
+      transparent 20%,
+      rgba(10, 132, 255, 0.12) 40%,
+      rgba(10, 132, 255, 0.18) 50%,
+      rgba(10, 132, 255, 0.12) 60%,
+      transparent 80%
+    );
+    background-size: 200% 100%;
+  }
+}
